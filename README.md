@@ -4,8 +4,8 @@ Code Vortex is an innovative self-interview prep platform harnessing the power o
 
 
 ## Deployed Links
-[https://code-vertex.netlify.app](https://code-vortex.vercel.app/)  **(Vercel)** \
-[https://tiny-pear-jaguar-veil.cyclic.app](https://codevortex.onrender.com) **(Render)** 
+https://code-vortex.vercel.app  **(Vercel)** \
+https://codevortex.onrender.com **(Render)** 
 
 
 ## Features
