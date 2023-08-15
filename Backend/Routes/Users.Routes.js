@@ -34,15 +34,15 @@ UserRoute.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     const isUserExist = await UserModel.findOne({ email });
-
+    console.log(isUserExist)
     if (!isUserExist) {
-      return res.status(401).send({ msg: "invalid username or password" });
+      return res.status(401).send({ "msg": "invalid username or password" });
     }
 
     var result = bcrypt.compareSync(password, isUserExist.password);
     // console.log(result);
     if (!result) {
-      return res.status(401).send({ msg: "invalid username or password" });
+      return res.status(401).send({ "msg": "invalid username or password" });
     }
 
     const Accesstoken = jwt.sign(
@@ -51,9 +51,9 @@ UserRoute.post("/login", async (req, res) => {
     );
     console.log(Accesstoken);
 
-    res.send({ msg: "login successfull", user: isUserExist, Accesstoken });
+    res.send({ "msg": "login successfull", "user": isUserExist, Accesstoken });
   } catch (error) {
-    res.send({ msg: error.msg });
+    res.send({ "msg": error.msg });
   }
 });
 UserRoute.get("/logout", async (req, res) => {
